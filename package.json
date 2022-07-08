@@ -1,0 +1,29 @@
+{
+  "name": "focussly",
+  "version": "1.0.0-alpha.0",
+  "description": "Photo editing software",
+  "author": "Jérôme Wohlschlegel <jerome.wohlschlegel@gmail.com>",
+  "license": "MIT",
+  "main": "src/process/index.js",
+  "keywords": [
+    "electron"
+  ],
+  "scripts": {
+    "dev:electron": "electron .",
+    "build:views": "webpack && node build/scripts/before-build.js",
+    "build:all": "npm run build:views && electron-builder -mwl",
+    "build:mac": "npm run build:views && electron-builder build --mac",
+    "build:win": "npm run build:views && electron-builder build --win",
+    "build:linux": "npm run build:views && electron-builder build --linux"
+  },
+  "devDependencies": {
+    "electron": "^19.0.8",
+    "electron-builder": "^23.0.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@focussly/electron-layer": "^1.0.0",
+    "electron-is-dev": "^2.0.0"
+  }
+}
