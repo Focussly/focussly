@@ -1,4 +1,4 @@
-# Focussly
+# focussly
 
 ## Installation
 

@@ -58,6 +58,8 @@ bower_components
 # dotenv environment variables file
 .env
 !.env.example
+.env.production
+!.env.production.example
 
 # next.js build output
 .next

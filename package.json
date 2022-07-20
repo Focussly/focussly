@@ -9,12 +9,15 @@
     "electron"
   ],
   "scripts": {
+    "postinstall": "cd src/views/main/ && cp .env.production.example .env.production && npm install",
     "dev:electron": "electron .",
-    "build:views": "webpack && node build/scripts/before-build.js",
-    "build:all": "npm run build:views && electron-builder -mwl",
-    "build:mac": "npm run build:views && electron-builder build --mac",
-    "build:win": "npm run build:views && electron-builder build --win",
-    "build:linux": "npm run build:views && electron-builder build --linux"
+    "dev:views": "cd src/views/main/ && npm run start",
+    "build:process": "webpack",
+    "build:views": "rm -rf dist/views && mkdir -p dist/views && cd src/views/main/ && npm run build",
+    "build:dist": "npm run build:process && npm run build:views && node build/scripts/before-build.js",
+    "build:mac": "npm run build:dist && electron-builder build --mac",
+    "build:win": "npm run build:dist && electron-builder build --win",
+    "build:linux": "npm run build:dist && electron-builder build --linux"
   },
   "devDependencies": {
     "electron": "^19.0.8",

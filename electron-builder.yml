@@ -1,4 +1,4 @@
-productName: Focussly
+productName: focussly
 appId: com.focussly.focussly
 artifactName: focussly-${os}-${arch}-${version}.${ext}
 asar: true
