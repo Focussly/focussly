@@ -1,0 +1,28 @@
+/*============================================================================*\
+  Utilities
+\*============================================================================*/
+
+/* Typography
+\*============================================================================*/
+
+/**
+ * CSS fluid typography
+ *
+ * Article: https://css-tricks.com/snippets/css/fluid-typography/
+ *
+ * @param int typoMinSize     Minimum font-size in pixel.
+ * @param int typoMaxSize     Maximum font-size in pixel.
+ * @param int viewPortMinSize Minimum viewport size in pixel.
+ * @param Int viewPortMaxSize Maximum viewport size in pixel.
+ */
+@function fluidTypographie(
+  $typoMinSize: 16,
+  $typoMaxSize: 16,
+  $viewPortMinSize: 320,
+  $viewPortMaxSize: 1440
+) {
+  @return calc(
+    #{$typoMinSize}px + (#{$typoMaxSize} - #{$typoMinSize}) *
+      ((100vw - #{$viewPortMinSize}px) / (#{$viewPortMaxSize} - #{$viewPortMinSize}))
+  );
+}
